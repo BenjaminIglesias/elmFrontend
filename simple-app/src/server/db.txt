@@ -1,0 +1,17 @@
+{
+    "books": [
+      {
+        "isbn": "9781593275846",
+        "title": "Eloquent JavaScript, Second Edition",
+        "author": "Marijn Haverbeke",
+        "pages": 472,
+        "description": "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.",
+      },
+      {
+        "isbn": "9781449331818",
+        "title": "Learning JavaScript Design Patterns",
+        "author": "Addy Osmani",
+        "pages": 254,
+        "description": "With Learning JavaScript Design Patterns, you'll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you.",
+      }
+    ]}
