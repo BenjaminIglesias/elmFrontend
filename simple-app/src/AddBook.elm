@@ -2,9 +2,9 @@ module AddBook exposing (..)
 
 
 import Browser
-import Book exposing (Book, bookDecoder, encodeBook)
+import Book exposing (Book, encodeBook)
 import ErrorHandler
-import Html exposing (Attribute, Html, a, button, div, input, p, text)
+import Html exposing ( Html, a, button, div, input, p, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
 import Http
@@ -92,7 +92,7 @@ update msg book =
 
 addBook : Book -> Cmd Msg
 addBook book = Http.post
-    { url = "http://localhost:5019/books"
+    { url = "http://localhost:4711/saveBook"
     , body = Http.jsonBody (encodeBook book)
     , expect = Http.expectString AddBookResult
     }
@@ -109,9 +109,9 @@ view book =
     , viewInput "text" "Author" book.author Author
     , viewInput "text" "Pages" book.pages  Pages
     , viewInput "text" "Description" book.description Description
-    , button [ onClick (AddBook book)] [ text "Add Book" ]
+    , button [  style "background-color" "#4CAF50", style "border-radius" "8px",onClick (AddBook book)] [ text "Add Book" ]
     , p [] [ text ("Server-response: "++book.addingResult) ]
-    , p[] [a [href "http://localhost:8000/src/DecodingJson.elm"] [ text "Click Here to See All Books"]]
+    ,  button[ style "background-color" "#4CAF50", style "border-radius" "8px"] [a [href "http://localhost:8000/src/DecodingJson.elm"] [ text "Click Here to see all books"]]
 
     ]
 

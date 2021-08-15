@@ -1,12 +1,9 @@
 {
-  "books": [
+  "person": [
     {
-      "isbn": "1",
-      "title": "test",
-      "author": "test",
-      "pages": "1234",
-      "description": "test",
-      "id": 1
+      "navn": "Hans",
+      "yndlingskaffe": "latte",
+      "yndlingsspil": "Heroes of the Storm"
     }
   ]
 }

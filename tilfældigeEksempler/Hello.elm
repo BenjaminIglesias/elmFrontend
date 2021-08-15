@@ -44,7 +44,7 @@ handleError error =
           (Failure <| "Bad Status: "++(String.fromInt status), Cmd.none)
         Http.BadUrl string ->
           (Failure <| "Bad Url: "++string, Cmd.none)
-update
+
 
 update : Message -> Model -> (Model, Cmd Message)
 update message model =

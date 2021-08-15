@@ -6,6 +6,7 @@ import Html.Events exposing (onClick)
 import Http
 import Json.Decode exposing (..)
 import Html.Attributes exposing (placeholder, href)
+import Html.Attributes exposing (style)
 
 
 type alias Book =
@@ -27,10 +28,10 @@ type alias Model =
 view : Model -> Html Msg
 view model =
     div []
-        [    input [ placeholder "name" ] []
-           , button [ onClick SendHttpRequest ]
+        [    
+            button[ style "background-color" "#4CAF50", style "border-radius" "8px", onClick SendHttpRequest ]
             [ text "Retrieve Books" ]
-            , p[] [a [href "http://localhost:8000/src/AddBook.elm"] [ text "Click Here to add a new Book"]]
+            , button[ style "background-color" "#4CAF50", style "border-radius" "8px"] [a [href "http://localhost:8000/src/AddBook.elm"] [ text "Click Here to add a new Book"]]
         , viewBooksOrError model
         ]
 
@@ -60,7 +61,7 @@ viewError errorMessage =
 viewBooks : List Book -> Html Msg
 viewBooks books =
     div []
-        [ h3 [] [ text "Books:" ]
+        [ h3 [] [] 
         , table []
             ([ viewTableHeader ] ++ List.map viewBook books)
         ]
@@ -68,16 +69,16 @@ viewBooks books =
 
 viewTableHeader : Html Msg
 viewTableHeader =
-    tr []
-        [ th []
+    tr [style "background-color" "green"]
+        [ th [style "border" "1px solid black"]
             [ text "ISBN" ]
-        , th []
+        , th [style "border" "1px solid black"]
             [ text "Title" ]
-        , th []
+        , th [style "border" "1px solid black"]
             [ text "Author" ]
-        , th []
+        , th [style "border" "1px solid black"]
             [ text "Pages" ]
-        , th []
+        , th [style "border" "1px solid black"]
             [ text "Description" ]
                     
                 
@@ -86,16 +87,16 @@ viewTableHeader =
 
 viewBook : Book -> Html Msg
 viewBook book =
-    tr []
-        [ td []
+    tr [style "background-color" "#4CAF50"]
+        [ td [style "border" "1px solid black"]
             [ text book.isbn ]
-        , td []
+        , td [style "border" "1px solid black"]
             [ text book.title ]
-        , td []
+        , td [style "border" "1px solid black"]
             [ text book.author ]
-        , td []
+        , td [style "border" "1px solid black"]
             [ text book.pages ]
-        , td []
+        , td [style "border" "1px solid black"]
             [ text book.description ]
       
         ]

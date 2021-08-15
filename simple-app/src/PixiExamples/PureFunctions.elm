@@ -1,0 +1,1 @@
+module PixiExamples.PureFunctions exposing (..)
